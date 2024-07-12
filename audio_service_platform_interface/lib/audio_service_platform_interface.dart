@@ -54,6 +54,11 @@ abstract class AudioServicePlatform extends PlatformInterface {
     throw UnimplementedError('stopService() has not been implemented.');
   }
 
+  Future<void> stopAndroidForeground(StopAndroidForegroundRequest request) {
+    throw UnimplementedError(
+        'StopAndroidForegroundRequest() has not been implemented.');
+  }
+
   Future<void> setAndroidPlaybackInfo(
       SetAndroidPlaybackInfoRequest request) async {
     throw UnimplementedError(
@@ -842,6 +847,16 @@ class StopServiceRequest {
   const StopServiceRequest();
 
   Map<String, dynamic> toMap() => <String, dynamic>{};
+}
+
+class StopAndroidForegroundRequest {
+  final bool removeNotification;
+  @literal
+  const StopAndroidForegroundRequest({required this.removeNotification});
+
+  Map<String, dynamic> toMap() => <String, dynamic>{
+        'removeNotification': removeNotification,
+      };
 }
 
 class SetAndroidPlaybackInfoRequest {
