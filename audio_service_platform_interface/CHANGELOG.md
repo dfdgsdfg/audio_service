@@ -1,3 +1,6 @@
+## 0.1.2
+* Add stopForeground to platform interface (@dfdgsdfg)
+
 ## 0.1.1
 
 * Add customAction to MediaControlMessage (@defsub)

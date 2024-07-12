@@ -29,6 +29,11 @@ class NoOpAudioService extends AudioServicePlatform {
   }
 
   @override
+  Future<void> stopAndroidForeground(StopAndroidForegroundRequest request) {
+    return SynchronousFuture(null);
+  }
+
+  @override
   Future<void> androidForceEnableMediaButtons(
       AndroidForceEnableMediaButtonsRequest request) {
     return SynchronousFuture(null);

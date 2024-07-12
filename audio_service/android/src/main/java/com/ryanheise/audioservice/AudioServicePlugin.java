@@ -979,6 +979,11 @@ public class AudioServicePlugin implements FlutterPlugin, ActivityAware {
                     result.success(null);
                     break;
                 }
+                case "stopAndroidForeground": {
+                    boolean removeNotification = (Boolean)stateMap.get("removeNotification");
+                    AudioService.instance.stop();
+                    AudioService.instance.exitForegroundState(removeNotification);
+                }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
