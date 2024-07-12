@@ -729,8 +729,13 @@ public class AudioService extends MediaBrowserServiceCompat {
         }
     }
 
-    public void exitForegroundState(Boolean removeNotification) {
-        legacyStopForeground(removeNotification != null ? removeNotification : false);
+    private void exitForegroundState() {
+        legacyStopForeground(false);
+        releaseWakeLock();
+    }
+
+    public void exitForegroundStateWithRemoveNotification(Boolean removeNotification) {
+        legacyStopForeground(removeNotification);
         releaseWakeLock();
     }
 
